@@ -7,7 +7,6 @@
                 <div class="panel panel-primary">
                     <div class="panel-heading">Registro Personas</div>
                     <div class="panel-body">
-                        <form>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="inputNif">Nif</label>
@@ -70,7 +69,6 @@
                                     </button>
                                 </div>
                             </div>
-                        </form>
                     </div>
                 </div>
             </div>
