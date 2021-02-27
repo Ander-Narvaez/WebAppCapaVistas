@@ -35,5 +35,12 @@ namespace WebAppCapaPersonas
                 GridViewPersonas.DataBind();
                 
          }
-     }
+
+        protected void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            Labelmsg.Text = Ws.MantenimientoPersona(inputNif.Text, inputNC.Text, inputDR.Text, inputTL.Text, inputPO.Text,
+                                                      inputPRO.Text, inputCDP.Text, inputNSS.Text, "I");
+            MostrarPersonas();
+        }
+    }
 }
