@@ -42,5 +42,20 @@ namespace WebAppCapaPersonas
                                                       inputPRO.Text, inputCDP.Text, inputNSS.Text, "I");
             MostrarPersonas();
         }
+
+        protected void GridViewPersonas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridViewRow row = GridViewPersonas.SelectedRow;
+
+            inputNif.Text = "" + row.Cells[1].Text;
+            inputNC.Text  = "" + row.Cells[2].Text; 
+            inputDR.Text  = "" + row.Cells[3].Text; 
+            inputTL.Text  = "" + row.Cells[4].Text; 
+            inputPO.Text  = "" + row.Cells[5].Text;
+            inputPRO.Text = "" + row.Cells[6].Text; 
+            inputCDP.Text = "" + row.Cells[7].Text;
+            inputNSS.Text = "" + row.Cells[8].Text;
+
+        }
     }
 }
