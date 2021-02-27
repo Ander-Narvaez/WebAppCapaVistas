@@ -76,7 +76,12 @@
     </div>
     <div class="row">
         <div class="col-12 col-md-12 mx-auto">
-            <asp:GridView runat="server" class="table table-hover" ID="GridViewPersonas">
+            <asp:GridView runat="server" class="table table-hover" ID="GridViewPersonas" OnSelectedIndexChanged="GridViewPersonas_SelectedIndexChanged">
+                <Columns>
+                    <asp:CommandField ShowEditButton="True" />
+                    <asp:CommandField EditImageUrl="&lt;div&gt;Iconos diseñados por &lt;a href=&quot;https://www.flaticon.es/autores/kiranshastry&quot; title=&quot;Kiranshastry&quot;&gt;Kiranshastry&lt;/a&gt; from &lt;a href=&quot;https://www.flaticon.es/&quot; title=&quot;Flaticon&quot;&gt;www.flaticon.es&lt;/a&gt;&lt;/div&gt;" ShowDeleteButton="True" />
+                    <asp:CommandField ButtonType="Image" HeaderText="Seleccionar" ShowSelectButton="True" />
+                </Columns>
             </asp:GridView>
         </div>
     </div>
