@@ -133,9 +133,10 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="WebFormMedicos.aspx" />
     <Content Include="WebFormPersonas.aspx" />
-    <None Include="Connected Services\ServiceReference\WebService.wsdl" />
     <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Connected Services\ServiceReference\WebService.wsdl" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -224,6 +225,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormMedicos.aspx.cs">
+      <DependentUpon>WebFormMedicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormMedicos.aspx.designer.cs">
+      <DependentUpon>WebFormMedicos.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormPersonas.aspx.cs">
       <DependentUpon>WebFormPersonas.aspx</DependentUpon>
