@@ -29,6 +29,20 @@ namespace WebAppCapaPersonas.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListaPersonas", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> GetListaPersonasAsync(string pNif, string pNombre_Completo, string pDireccion, string pTelefono, string pPoblacion, string pProvincia, string pCodigo_Postal, string pNum_Seguridad_Social, string pAccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MantenimientoMedico", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string MantenimientoMedico(string pNif_Medico, System.DateTime pFecha_Alta, System.DateTime pFecha_Baja, string pNum_Colegiado, string pEstatus, string pAccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MantenimientoMedico", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> MantenimientoMedicoAsync(string pNif_Medico, System.DateTime pFecha_Alta, System.DateTime pFecha_Baja, string pNum_Colegiado, string pEstatus, string pAccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListaMedicos", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetListaMedicos(string pNif_Medico, System.DateTime pFecha_Alta, System.DateTime pFecha_Baja, string pNum_Colegiado, string pEstatus, string pAccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListaMedicos", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> GetListaMedicosAsync(string pNif_Medico, System.DateTime pFecha_Alta, System.DateTime pFecha_Baja, string pNum_Colegiado, string pEstatus, string pAccion);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -72,6 +86,22 @@ namespace WebAppCapaPersonas.ServiceReference {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> GetListaPersonasAsync(string pNif, string pNombre_Completo, string pDireccion, string pTelefono, string pPoblacion, string pProvincia, string pCodigo_Postal, string pNum_Seguridad_Social, string pAccion) {
             return base.Channel.GetListaPersonasAsync(pNif, pNombre_Completo, pDireccion, pTelefono, pPoblacion, pProvincia, pCodigo_Postal, pNum_Seguridad_Social, pAccion);
+        }
+        
+        public string MantenimientoMedico(string pNif_Medico, System.DateTime pFecha_Alta, System.DateTime pFecha_Baja, string pNum_Colegiado, string pEstatus, string pAccion) {
+            return base.Channel.MantenimientoMedico(pNif_Medico, pFecha_Alta, pFecha_Baja, pNum_Colegiado, pEstatus, pAccion);
+        }
+        
+        public System.Threading.Tasks.Task<string> MantenimientoMedicoAsync(string pNif_Medico, System.DateTime pFecha_Alta, System.DateTime pFecha_Baja, string pNum_Colegiado, string pEstatus, string pAccion) {
+            return base.Channel.MantenimientoMedicoAsync(pNif_Medico, pFecha_Alta, pFecha_Baja, pNum_Colegiado, pEstatus, pAccion);
+        }
+        
+        public System.Data.DataSet GetListaMedicos(string pNif_Medico, System.DateTime pFecha_Alta, System.DateTime pFecha_Baja, string pNum_Colegiado, string pEstatus, string pAccion) {
+            return base.Channel.GetListaMedicos(pNif_Medico, pFecha_Alta, pFecha_Baja, pNum_Colegiado, pEstatus, pAccion);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> GetListaMedicosAsync(string pNif_Medico, System.DateTime pFecha_Alta, System.DateTime pFecha_Baja, string pNum_Colegiado, string pEstatus, string pAccion) {
+            return base.Channel.GetListaMedicosAsync(pNif_Medico, pFecha_Alta, pFecha_Baja, pNum_Colegiado, pEstatus, pAccion);
         }
     }
 }

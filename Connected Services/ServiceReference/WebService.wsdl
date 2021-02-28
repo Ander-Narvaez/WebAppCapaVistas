@@ -53,6 +53,51 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="MantenimientoMedico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pNif_Medico" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pFecha_Alta" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="pFecha_Baja" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNum_Colegiado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pEstatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pAccion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MantenimientoMedicoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MantenimientoMedicoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListaMedicos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pNif_Medico" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pFecha_Alta" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="pFecha_Baja" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNum_Colegiado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pEstatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pAccion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListaMedicosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListaMedicosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="MantenimientoPersonaSoapIn">
@@ -67,6 +112,18 @@
   <wsdl:message name="GetListaPersonasSoapOut">
     <wsdl:part name="parameters" element="tns:GetListaPersonasResponse" />
   </wsdl:message>
+  <wsdl:message name="MantenimientoMedicoSoapIn">
+    <wsdl:part name="parameters" element="tns:MantenimientoMedico" />
+  </wsdl:message>
+  <wsdl:message name="MantenimientoMedicoSoapOut">
+    <wsdl:part name="parameters" element="tns:MantenimientoMedicoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListaMedicosSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListaMedicos" />
+  </wsdl:message>
+  <wsdl:message name="GetListaMedicosSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListaMedicosResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebServiceSoap">
     <wsdl:operation name="MantenimientoPersona">
       <wsdl:input message="tns:MantenimientoPersonaSoapIn" />
@@ -75,6 +132,14 @@
     <wsdl:operation name="GetListaPersonas">
       <wsdl:input message="tns:GetListaPersonasSoapIn" />
       <wsdl:output message="tns:GetListaPersonasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MantenimientoMedico">
+      <wsdl:input message="tns:MantenimientoMedicoSoapIn" />
+      <wsdl:output message="tns:MantenimientoMedicoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaMedicos">
+      <wsdl:input message="tns:GetListaMedicosSoapIn" />
+      <wsdl:output message="tns:GetListaMedicosSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
@@ -97,6 +162,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="MantenimientoMedico">
+      <soap:operation soapAction="http://tempuri.org/MantenimientoMedico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaMedicos">
+      <soap:operation soapAction="http://tempuri.org/GetListaMedicos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -111,6 +194,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetListaPersonas">
       <soap12:operation soapAction="http://tempuri.org/GetListaPersonas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MantenimientoMedico">
+      <soap12:operation soapAction="http://tempuri.org/MantenimientoMedico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaMedicos">
+      <soap12:operation soapAction="http://tempuri.org/GetListaMedicos" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

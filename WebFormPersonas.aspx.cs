@@ -57,5 +57,6 @@ namespace WebAppCapaPersonas
             inputNSS.Text = "" + row.Cells[8].Text;
 
         }
+
     }
 }
