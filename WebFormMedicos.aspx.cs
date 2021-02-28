@@ -26,39 +26,11 @@ namespace WebAppCapaPersonas
             }
         }
 
-        public void MostrarMedicos()
-        {
-            //DataSet Dts = new DataSet();
-            //Dts = Ws.GetListaMedicos(DropDownListNifMedico.SelectedItem, fecha_alta., fecha_baja., inputNCO.Text, inputState.SelectedIndex, "S");
-            //GridViewMedicos.DataSource = Dts;
-             //GridViewMedicos.DataBind();
-
-        }
 
         protected void BtnAgregar_Click(object sender, EventArgs e)
         {
            // Labelmsg.Text = Ws.MantenimientoMedico(DropDownListNifMedico.SelectedItem, fecha_alta. , fecha_baja. , inputNCO.Text, inputState.SelectedIndex, "I");
             //MostrarMedicos();
-        }
-
-        protected void DropDownListNifMedico_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void DropDownListNifMedico_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        //protected void BtnAgregar_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        protected void GridViewMedicos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
