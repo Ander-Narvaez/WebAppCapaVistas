@@ -15,6 +15,15 @@ namespace WebAppCapaPersonas
     {
 
         /// <summary>
+        /// Control DropDownListNif.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListNif;
+
+        /// <summary>
         /// Control fecha_alta.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace WebAppCapaPersonas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator;
+
+        /// <summary>
+        /// Control inputState.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList inputState;
 
         /// <summary>
         /// Control BtnAgregar.

@@ -9,6 +9,11 @@
                     <div class="panel-heading">Registro Medicos</div>
                     <div class="panel-body">
                         <div class="form-row">
+                            <div class="form-group col-md-8">
+                                 <label for="DropDownListNif">Nif</label>
+                                <asp:DropDownList class="form-control" ID="DropDownListNif" runat="server">
+                                </asp:DropDownList>
+                            </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
@@ -26,16 +31,16 @@
                                 <asp:TextBox type="text" class="form-control" ID="inputNCO" placeholder="Numero Colegiado" runat="server"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="inputNCO" ForeColor="Red">Debe Ilenar el campo</asp:RequiredFieldValidator>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <label for="inputState">Estatus</label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Medico Interino</option>
-                                    <option selected>Medico Titular</option>
-                                    <option selected>Medico Sustituto</option>
-                                </select>
+                                <asp:DropDownList class="form-control" ID="inputState" runat="server">
+                                    <asp:ListItem>Medico Interino</asp:ListItem>
+                                    <asp:ListItem>MedicoTitular</asp:ListItem>
+                                    <asp:ListItem>Medico Sustituto</asp:ListItem>
+                                </asp:DropDownList>
                             </div>
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-8">
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <asp:Button class="btn btn-success" ID="BtnAgregar" runat="server" Text="Agregar" OnClick="BtnAgregar_Click" />
                             </div>

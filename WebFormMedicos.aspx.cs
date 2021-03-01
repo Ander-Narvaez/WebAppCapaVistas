@@ -29,7 +29,7 @@ namespace WebAppCapaPersonas
 
         protected void BtnAgregar_Click(object sender, EventArgs e)
         {
-           // Labelmsg.Text = Ws.MantenimientoMedico(DropDownListNifMedico.SelectedItem, fecha_alta. , fecha_baja. , inputNCO.Text, inputState.SelectedIndex, "I");
+             Labelmsg.Text = Ws.MantenimientoMedico(DropDownListNif.SelectedItem.ToString(), fecha_alta.Value,fecha_baja.Value, inputNCO.Text, inputState.SelectedItem.ToString(), "I");
             //MostrarMedicos();
         }
     }

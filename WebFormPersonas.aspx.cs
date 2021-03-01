@@ -33,13 +33,20 @@ namespace WebAppCapaPersonas
                                           inputPRO.Text, inputCDP.Text, inputNSS.Text, "S");
                 GridViewPersonas.DataSource = Dts;
                 GridViewPersonas.DataBind();
-                
-         }
+        }
 
         protected void BtnAgregar_Click(object sender, EventArgs e)
         {
             Labelmsg.Text = Ws.MantenimientoPersona(inputNif.Text, inputNC.Text, inputDR.Text, inputTL.Text, inputPO.Text,
                                                       inputPRO.Text, inputCDP.Text, inputNSS.Text, "I");
+            inputNif.Text = "";
+            inputNC.Text  = "";
+            inputDR.Text  = "";
+            inputTL.Text  = "";
+            inputPO.Text  = "";
+            inputPRO.Text = "";
+            inputCDP.Text = "";
+            inputNSS.Text = "";
             MostrarPersonas();
         }
 
