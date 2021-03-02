@@ -17,7 +17,6 @@ namespace WebAppCapaPersonas
             if (IsPostBack)
             {
                 vResfrescarObjeto = "nueva";
-                //Se ejecuta cada vez que se refresca un objecto con auto -posback
             }
             else
             {
@@ -34,7 +33,7 @@ namespace WebAppCapaPersonas
 
             DropDownListNif.DataSource = Cargar_Personas();
             DropDownListNif.DataTextField = "NIF";
-            //DropDownListNif.DataValueField = "Cedula";
+            DropDownListNif.DataValueField = "Cedula";
             DropDownListNif.DataBind();
         }
 
