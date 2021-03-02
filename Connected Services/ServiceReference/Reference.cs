@@ -74,17 +74,31 @@ namespace WebAppCapaPersonas.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MantenimientoHorarios", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string MantenimientoHorarios(string pDia, string pJornada, string pMedico, string pAccion);
+        string MantenimientoHorarios(string pCodigoH, string pDia, string pJornada, string pMedico, string pAccion);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MantenimientoHorarios", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> MantenimientoHorariosAsync(string pDia, string pJornada, string pMedico, string pAccion);
+        System.Threading.Tasks.Task<string> MantenimientoHorariosAsync(string pCodigoH, string pDia, string pJornada, string pMedico, string pAccion);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListaHorarios", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetListaHorarios(string pDia, string pJornada, string pMedico, string pAccion);
+        System.Data.DataSet GetListaHorarios(string pCodigoH, string pDia, string pJornada, string pMedico, string pAccion);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListaHorarios", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> GetListaHorariosAsync(string pDia, string pJornada, string pMedico, string pAccion);
+        System.Threading.Tasks.Task<System.Data.DataSet> GetListaHorariosAsync(string pCodigoH, string pDia, string pJornada, string pMedico, string pAccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MantenimientoVacaciones", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string MantenimientoVacaciones(string pMedico, string pAccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MantenimientoVacaciones", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> MantenimientoVacacionesAsync(string pMedico, string pAccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListaVacaciones", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetListaVacaciones(string pMedico, string pAccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListaVacaciones", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> GetListaVacacionesAsync(string pMedico, string pAccion);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -178,20 +192,36 @@ namespace WebAppCapaPersonas.ServiceReference {
             return base.Channel.GetListaPacientesAsync(pNif_Paciente, pMedico, pAccion);
         }
         
-        public string MantenimientoHorarios(string pDia, string pJornada, string pMedico, string pAccion) {
-            return base.Channel.MantenimientoHorarios(pDia, pJornada, pMedico, pAccion);
+        public string MantenimientoHorarios(string pCodigoH, string pDia, string pJornada, string pMedico, string pAccion) {
+            return base.Channel.MantenimientoHorarios(pCodigoH, pDia, pJornada, pMedico, pAccion);
         }
         
-        public System.Threading.Tasks.Task<string> MantenimientoHorariosAsync(string pDia, string pJornada, string pMedico, string pAccion) {
-            return base.Channel.MantenimientoHorariosAsync(pDia, pJornada, pMedico, pAccion);
+        public System.Threading.Tasks.Task<string> MantenimientoHorariosAsync(string pCodigoH, string pDia, string pJornada, string pMedico, string pAccion) {
+            return base.Channel.MantenimientoHorariosAsync(pCodigoH, pDia, pJornada, pMedico, pAccion);
         }
         
-        public System.Data.DataSet GetListaHorarios(string pDia, string pJornada, string pMedico, string pAccion) {
-            return base.Channel.GetListaHorarios(pDia, pJornada, pMedico, pAccion);
+        public System.Data.DataSet GetListaHorarios(string pCodigoH, string pDia, string pJornada, string pMedico, string pAccion) {
+            return base.Channel.GetListaHorarios(pCodigoH, pDia, pJornada, pMedico, pAccion);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> GetListaHorariosAsync(string pDia, string pJornada, string pMedico, string pAccion) {
-            return base.Channel.GetListaHorariosAsync(pDia, pJornada, pMedico, pAccion);
+        public System.Threading.Tasks.Task<System.Data.DataSet> GetListaHorariosAsync(string pCodigoH, string pDia, string pJornada, string pMedico, string pAccion) {
+            return base.Channel.GetListaHorariosAsync(pCodigoH, pDia, pJornada, pMedico, pAccion);
+        }
+        
+        public string MantenimientoVacaciones(string pMedico, string pAccion) {
+            return base.Channel.MantenimientoVacaciones(pMedico, pAccion);
+        }
+        
+        public System.Threading.Tasks.Task<string> MantenimientoVacacionesAsync(string pMedico, string pAccion) {
+            return base.Channel.MantenimientoVacacionesAsync(pMedico, pAccion);
+        }
+        
+        public System.Data.DataSet GetListaVacaciones(string pMedico, string pAccion) {
+            return base.Channel.GetListaVacaciones(pMedico, pAccion);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> GetListaVacacionesAsync(string pMedico, string pAccion) {
+            return base.Channel.GetListaVacacionesAsync(pMedico, pAccion);
         }
     }
 }

@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="WebFormVacaciones.aspx" />
     <None Include="Connected Services\ServiceReference\WebService.disco" />
     <None Include="Connected Services\ServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\ServiceReference\configuration.svcinfo" />
@@ -263,6 +264,13 @@
     </Compile>
     <Compile Include="WebFormPersonas.aspx.designer.cs">
       <DependentUpon>WebFormPersonas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormVacaciones.aspx.cs">
+      <DependentUpon>WebFormVacaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormVacaciones.aspx.designer.cs">
+      <DependentUpon>WebFormVacaciones.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

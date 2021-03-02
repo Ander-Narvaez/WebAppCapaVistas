@@ -179,6 +179,7 @@
       <s:element name="MantenimientoHorarios">
         <s:complexType>
           <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCodigoH" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="pDia" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="pJornada" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="pMedico" type="s:string" />
@@ -196,6 +197,7 @@
       <s:element name="GetListaHorarios">
         <s:complexType>
           <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCodigoH" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="pDia" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="pJornada" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="pMedico" type="s:string" />
@@ -207,6 +209,43 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="GetListaHorariosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MantenimientoVacaciones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pMedico" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pAccion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MantenimientoVacacionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MantenimientoVacacionesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListaVacaciones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pMedico" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pAccion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListaVacacionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListaVacacionesResult">
               <s:complexType>
                 <s:sequence>
                   <s:element ref="s:schema" />
@@ -279,6 +318,18 @@
   <wsdl:message name="GetListaHorariosSoapOut">
     <wsdl:part name="parameters" element="tns:GetListaHorariosResponse" />
   </wsdl:message>
+  <wsdl:message name="MantenimientoVacacionesSoapIn">
+    <wsdl:part name="parameters" element="tns:MantenimientoVacaciones" />
+  </wsdl:message>
+  <wsdl:message name="MantenimientoVacacionesSoapOut">
+    <wsdl:part name="parameters" element="tns:MantenimientoVacacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListaVacacionesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListaVacaciones" />
+  </wsdl:message>
+  <wsdl:message name="GetListaVacacionesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListaVacacionesResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebServiceSoap">
     <wsdl:operation name="MantenimientoPersona">
       <wsdl:input message="tns:MantenimientoPersonaSoapIn" />
@@ -319,6 +370,14 @@
     <wsdl:operation name="GetListaHorarios">
       <wsdl:input message="tns:GetListaHorariosSoapIn" />
       <wsdl:output message="tns:GetListaHorariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MantenimientoVacaciones">
+      <wsdl:input message="tns:MantenimientoVacacionesSoapIn" />
+      <wsdl:output message="tns:MantenimientoVacacionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaVacaciones">
+      <wsdl:input message="tns:GetListaVacacionesSoapIn" />
+      <wsdl:output message="tns:GetListaVacacionesSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
@@ -413,6 +472,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="MantenimientoVacaciones">
+      <soap:operation soapAction="http://tempuri.org/MantenimientoVacaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaVacaciones">
+      <soap:operation soapAction="http://tempuri.org/GetListaVacaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -499,6 +576,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetListaHorarios">
       <soap12:operation soapAction="http://tempuri.org/GetListaHorarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MantenimientoVacaciones">
+      <soap12:operation soapAction="http://tempuri.org/MantenimientoVacaciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaVacaciones">
+      <soap12:operation soapAction="http://tempuri.org/GetListaVacaciones" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
