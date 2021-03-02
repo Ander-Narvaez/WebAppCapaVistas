@@ -28,7 +28,7 @@ namespace WebAppCapaPersonas
         public void MostrarPacientes()
         {
             DataSet Dts = new DataSet();
-            Dts = Ws.MantenimientoPacientes("", "", "S");
+            Dts = Ws.GetListaPacientes("", "", "S");
             GridViewPacientes.DataSource = Dts;
             GridViewPacientes.DataBind();
 
