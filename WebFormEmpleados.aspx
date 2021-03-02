@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="WebFormEmpleados.aspx.cs" Inherits="WebAppCapaPersonas.WebFormEmpleados" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    
+
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-sm-10">
@@ -11,11 +12,13 @@
                             <div class="form-group col-md-6">
                                 <label for="DropDownListNif">Nif</label>
                                 <asp:DropDownList class="form-control" ID="DropDownListNif" runat="server">
+                                     <asp:ListItem> </asp:ListItem>
                                 </asp:DropDownList>
                             </div>
-                             <div class="form-group col-md-6">
+                            <div class="form-group col-md-6">
                                 <label for="DropDownListPuesto_Empleado">Puesto Empleado</label>
                                 <asp:DropDownList class="form-control" ID="DropDownListPuesto_Empleado" runat="server">
+                                    <asp:ListItem> </asp:ListItem>
                                     <asp:ListItem>Ats</asp:ListItem>
                                     <asp:ListItem>Ats de Zona</asp:ListItem>
                                     <asp:ListItem>Auxiliares de Enfermería</asp:ListItem>
@@ -27,6 +30,8 @@
                         <div class="form-group col-md-8">
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <asp:Button class="btn btn-success" ID="BtnAgregar" runat="server" Text="Agregar" OnClick="BtnAgregar_Click" />
+                                <asp:Button class="btn btn-info" ID="BtnActulizar" runat="server" Text="Actualizar" OnClick="BtnActualizar_Click" />
+                                <asp:Button class="btn btn-danger" ID="BtnEliminar" runat="server" Text="Eliminar" OnClick="BtnEliminar_Click" />
                             </div>
                         </div>
                         <div class="form-group col-md-6">
@@ -45,18 +50,10 @@
     </div>
     <div class="row">
         <div class="col-12 col-md-12 mx-auto">
-            <asp:GridView runat="server" class="table table-hover" ID="GridViewEmpleados" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
+            <asp:GridView runat="server" class="table table-hover" ID="GridViewEmpleados" OnSelectedIndexChanged="GridViewEmpleados_SelectedIndexChanged">
                 <Columns>
                     <asp:CommandField HeaderText="Seleccionar" ShowSelectButton="True" />
                 </Columns>
-                <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
-                <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
-                <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
-                <SortedAscendingCellStyle BackColor="#F7F7F7" />
-                <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
-                <SortedDescendingCellStyle BackColor="#E5E5E5" />
-                <SortedDescendingHeaderStyle BackColor="#242121" />
             </asp:GridView>
         </div>
     </div>
