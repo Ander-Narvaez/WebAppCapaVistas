@@ -11,9 +11,14 @@
                     <div class="panel-body">
                         <div class="form-row">
                             <div class="form-group col-md-8">
+                                <label for="inputCodigoH">Codigo Horario</label>
+                                <asp:TextBox type="text" class="form-control" ID="inputCodigoH" placeholder="Codigo Horario" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="inputCodigoH" ForeColor="Red">Debe Ilenar el campo</asp:RequiredFieldValidator>
+                            </div>
+                            <div class="form-group col-md-8">
                                 <label for="inputDia">Dia Horario</label>
                                 <asp:TextBox type="text" class="form-control" ID="inputDia" placeholder="Dia Horario" runat="server"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="inputDia" ForeColor="Red">Debe Ilenar el campo</asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="inputDia" ForeColor="Red">Debe Ilenar el campo</asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="form-row">

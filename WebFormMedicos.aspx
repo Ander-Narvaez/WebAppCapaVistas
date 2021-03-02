@@ -11,7 +11,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-8">
                                  <label for="DropDownListNif">Nif</label>
-                                <asp:DropDownList class="form-control" ID="DropDownListNif" runat="server" OnSelectedIndexChanged="DropDownListNif_SelectedIndexChanged">
+                                <asp:DropDownList class="form-control" ID="DropDownListNif" runat="server">
                                 <asp:ListItem> </asp:ListItem>
                                 </asp:DropDownList>
                             </div>
