@@ -32,17 +32,45 @@ namespace WebAppCapaPersonas.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MantenimientoMedico", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string MantenimientoMedico(string pNif_Medico, System.DateTime pFecha_Alta, System.DateTime pFecha_Baja, string pNum_Colegiado, string pEstatus, string pAccion);
+        string MantenimientoMedico(string pNif_Medico, string pFecha_Alta, string pFecha_Baja, string pNum_Colegiado, string pEstatus, string pAccion);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MantenimientoMedico", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> MantenimientoMedicoAsync(string pNif_Medico, System.DateTime pFecha_Alta, System.DateTime pFecha_Baja, string pNum_Colegiado, string pEstatus, string pAccion);
+        System.Threading.Tasks.Task<string> MantenimientoMedicoAsync(string pNif_Medico, string pFecha_Alta, string pFecha_Baja, string pNum_Colegiado, string pEstatus, string pAccion);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListaMedicos", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GetListaMedicos(string pNif_Medico, System.DateTime pFecha_Alta, System.DateTime pFecha_Baja, string pNum_Colegiado, string pEstatus, string pAccion);
+        System.Data.DataSet GetListaMedicos(string pNif_Medico, string pFecha_Alta, string pFecha_Baja, string pNum_Colegiado, string pEstatus, string pAccion);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListaMedicos", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> GetListaMedicosAsync(string pNif_Medico, System.DateTime pFecha_Alta, System.DateTime pFecha_Baja, string pNum_Colegiado, string pEstatus, string pAccion);
+        System.Threading.Tasks.Task<System.Data.DataSet> GetListaMedicosAsync(string pNif_Medico, string pFecha_Alta, string pFecha_Baja, string pNum_Colegiado, string pEstatus, string pAccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MantenimientoEmpleados", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string MantenimientoEmpleados(string pNif_Empleado, string pPuesto_Empleado, string pAccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MantenimientoEmpleados", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> MantenimientoEmpleadosAsync(string pNif_Empleado, string pPuesto_Empleado, string pAccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListaEmpleados", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetListaEmpleados(string pNif_Empleado, string pPuesto_Empleado, string pAccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListaEmpleados", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> GetListaEmpleadosAsync(string pNif_Empleado, string pPuesto_Empleado, string pAccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MantenimientoPacientes", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string MantenimientoPacientes(string pNif_Paciente, string pMedico, string pAccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MantenimientoPacientes", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> MantenimientoPacientesAsync(string pNif_Paciente, string pMedico, string pAccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListaPacientes", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetListaPacientes(string pNif_Paciente, string pMedico, string pAccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListaPacientes", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> GetListaPacientesAsync(string pNif_Paciente, string pMedico, string pAccion);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -88,20 +116,52 @@ namespace WebAppCapaPersonas.ServiceReference {
             return base.Channel.GetListaPersonasAsync(pNif, pNombre_Completo, pDireccion, pTelefono, pPoblacion, pProvincia, pCodigo_Postal, pNum_Seguridad_Social, pAccion);
         }
         
-        public string MantenimientoMedico(string pNif_Medico, System.DateTime pFecha_Alta, System.DateTime pFecha_Baja, string pNum_Colegiado, string pEstatus, string pAccion) {
+        public string MantenimientoMedico(string pNif_Medico, string pFecha_Alta, string pFecha_Baja, string pNum_Colegiado, string pEstatus, string pAccion) {
             return base.Channel.MantenimientoMedico(pNif_Medico, pFecha_Alta, pFecha_Baja, pNum_Colegiado, pEstatus, pAccion);
         }
         
-        public System.Threading.Tasks.Task<string> MantenimientoMedicoAsync(string pNif_Medico, System.DateTime pFecha_Alta, System.DateTime pFecha_Baja, string pNum_Colegiado, string pEstatus, string pAccion) {
+        public System.Threading.Tasks.Task<string> MantenimientoMedicoAsync(string pNif_Medico, string pFecha_Alta, string pFecha_Baja, string pNum_Colegiado, string pEstatus, string pAccion) {
             return base.Channel.MantenimientoMedicoAsync(pNif_Medico, pFecha_Alta, pFecha_Baja, pNum_Colegiado, pEstatus, pAccion);
         }
         
-        public System.Data.DataSet GetListaMedicos(string pNif_Medico, System.DateTime pFecha_Alta, System.DateTime pFecha_Baja, string pNum_Colegiado, string pEstatus, string pAccion) {
+        public System.Data.DataSet GetListaMedicos(string pNif_Medico, string pFecha_Alta, string pFecha_Baja, string pNum_Colegiado, string pEstatus, string pAccion) {
             return base.Channel.GetListaMedicos(pNif_Medico, pFecha_Alta, pFecha_Baja, pNum_Colegiado, pEstatus, pAccion);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> GetListaMedicosAsync(string pNif_Medico, System.DateTime pFecha_Alta, System.DateTime pFecha_Baja, string pNum_Colegiado, string pEstatus, string pAccion) {
+        public System.Threading.Tasks.Task<System.Data.DataSet> GetListaMedicosAsync(string pNif_Medico, string pFecha_Alta, string pFecha_Baja, string pNum_Colegiado, string pEstatus, string pAccion) {
             return base.Channel.GetListaMedicosAsync(pNif_Medico, pFecha_Alta, pFecha_Baja, pNum_Colegiado, pEstatus, pAccion);
+        }
+        
+        public string MantenimientoEmpleados(string pNif_Empleado, string pPuesto_Empleado, string pAccion) {
+            return base.Channel.MantenimientoEmpleados(pNif_Empleado, pPuesto_Empleado, pAccion);
+        }
+        
+        public System.Threading.Tasks.Task<string> MantenimientoEmpleadosAsync(string pNif_Empleado, string pPuesto_Empleado, string pAccion) {
+            return base.Channel.MantenimientoEmpleadosAsync(pNif_Empleado, pPuesto_Empleado, pAccion);
+        }
+        
+        public System.Data.DataSet GetListaEmpleados(string pNif_Empleado, string pPuesto_Empleado, string pAccion) {
+            return base.Channel.GetListaEmpleados(pNif_Empleado, pPuesto_Empleado, pAccion);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> GetListaEmpleadosAsync(string pNif_Empleado, string pPuesto_Empleado, string pAccion) {
+            return base.Channel.GetListaEmpleadosAsync(pNif_Empleado, pPuesto_Empleado, pAccion);
+        }
+        
+        public string MantenimientoPacientes(string pNif_Paciente, string pMedico, string pAccion) {
+            return base.Channel.MantenimientoPacientes(pNif_Paciente, pMedico, pAccion);
+        }
+        
+        public System.Threading.Tasks.Task<string> MantenimientoPacientesAsync(string pNif_Paciente, string pMedico, string pAccion) {
+            return base.Channel.MantenimientoPacientesAsync(pNif_Paciente, pMedico, pAccion);
+        }
+        
+        public System.Data.DataSet GetListaPacientes(string pNif_Paciente, string pMedico, string pAccion) {
+            return base.Channel.GetListaPacientes(pNif_Paciente, pMedico, pAccion);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> GetListaPacientesAsync(string pNif_Paciente, string pMedico, string pAccion) {
+            return base.Channel.GetListaPacientesAsync(pNif_Paciente, pMedico, pAccion);
         }
     }
 }
