@@ -17,7 +17,6 @@ namespace WebAppCapaPersonas
             if (IsPostBack)
             {
                 vResfrescarObjeto = "nueva";
-                //Se ejecuta cada vez que se refresca un objecto con auto -posback
             }
             else
             {
