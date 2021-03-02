@@ -34,7 +34,7 @@ namespace WebAppCapaPersonas
         public void MostrarMedicos()
         {
             DataSet Dts = new DataSet();
-            Dts = Ws.GetListaMedicos("",DateTime.MinValue,DateTime.MinValue,"" ,"", "S");
+            Dts = Ws.GetListaMedicos("","","","" ,"", "S");
             GridViewMedicos.DataSource = Dts;
             GridViewMedicos.DataBind();
 
@@ -53,7 +53,7 @@ namespace WebAppCapaPersonas
         }
         protected void BtnAgregar_Click(object sender, EventArgs e)
         {
-            Labelmsg.Text = Ws.MantenimientoMedico(DropDownListNif.SelectedItem.ToString(), Convert_Date(fecha_alta.Value), Convert_Date(fecha_baja.Value), inputNCO.Text, inputState.SelectedItem.ToString(), "I");
+            Labelmsg.Text = Ws.MantenimientoMedico(DropDownListNif.SelectedItem.ToString(), fecha_alta.Value, fecha_baja.Value, inputNCO.Text, inputState.SelectedItem.ToString(), "I");
             MostrarMedicos();
         }
     }
