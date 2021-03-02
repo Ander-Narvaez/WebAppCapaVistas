@@ -28,7 +28,7 @@ namespace WebAppCapaPersonas
         public void MostrarEmpleados()
         {
             DataSet Dts = new DataSet();
-            Dts = Ws.MantenimientoEmpleados("","","S");
+            Dts = Ws.GetListaEmpleados("","","S");
             GridViewEmpleados.DataSource = Dts;
             GridViewEmpleados.DataBind();
 
