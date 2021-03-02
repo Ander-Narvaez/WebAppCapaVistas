@@ -33,7 +33,7 @@ namespace WebAppCapaPersonas
 
             DropDownListNif.DataSource = Cargar_Personas();
             DropDownListNif.DataTextField = "NIF";
-            DropDownListNif.DataValueField = "Cedula";
+            //DropDownListNif.DataValueField = "Cedula";
             DropDownListNif.DataBind();
         }
 

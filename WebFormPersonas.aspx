@@ -58,6 +58,8 @@
                         <div class="form-group col-md-6">
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <asp:Button class="btn btn-success" ID="BtnAgregar" runat="server" Text="Agregar" OnClick="BtnAgregar_Click" />
+                                <asp:Button class="btn btn-info" ID="BtnActulizar" runat="server" Text="Actualizar" OnClick="BtnActualizar_Click" />
+                                <asp:Button class="btn btn-danger" ID="BtnEliminar" runat="server" Text="Eliminar" OnClick="BtnEliminar_Click" />
                             </div>
                         </div>
                         <div class="form-group col-md-6">

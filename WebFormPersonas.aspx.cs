@@ -24,8 +24,9 @@ namespace WebAppCapaPersonas
             }
         }
 
-            public void MostrarPersonas()
-            {
+            
+        public void MostrarPersonas()
+        {
                 DataSet Dts = new DataSet();
                 Dts = Ws.GetListaPersonas(inputNif.Text, inputNC.Text, inputDR.Text, inputTL.Text, inputPO.Text, 
                                           inputPRO.Text, inputCDP.Text, inputNSS.Text, "S");
@@ -33,18 +34,23 @@ namespace WebAppCapaPersonas
                 GridViewPersonas.DataBind();
         }
 
+            public void Limpiar_campos()
+        {
+            inputNif.Text = "";
+            inputNC.Text = "";
+            inputDR.Text = "";
+            inputTL.Text = "";
+            inputPO.Text = "";
+            inputPRO.Text = "";
+            inputCDP.Text = "";
+            inputNSS.Text = "";
+        }
+
         protected void BtnAgregar_Click(object sender, EventArgs e)
         {
             Labelmsg.Text = Ws.MantenimientoPersona(inputNif.Text, inputNC.Text, inputDR.Text, inputTL.Text, inputPO.Text,
                                                       inputPRO.Text, inputCDP.Text, inputNSS.Text, "I");
-            inputNif.Text = "";
-            inputNC.Text  = "";
-            inputDR.Text  = "";
-            inputTL.Text  = "";
-            inputPO.Text  = "";
-            inputPRO.Text = "";
-            inputCDP.Text = "";
-            inputNSS.Text = "";
+            Limpiar_campos();
             MostrarPersonas();
         }
 
@@ -61,6 +67,22 @@ namespace WebAppCapaPersonas
             inputCDP.Text = "" + row.Cells[7].Text;
             inputNSS.Text = "" + row.Cells[8].Text;
 
+        }
+
+        protected void BtnActualizar_Click(object sender, EventArgs e)
+        {
+            Labelmsg.Text = Ws.MantenimientoPersona(inputNif.Text, inputNC.Text, inputDR.Text, inputTL.Text, inputPO.Text,
+                                                      inputPRO.Text, inputCDP.Text, inputNSS.Text, "U");
+            Limpiar_campos();
+            MostrarPersonas();
+        }
+
+        protected void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            Labelmsg.Text = Ws.MantenimientoPersona(inputNif.Text, inputNC.Text, inputDR.Text, inputTL.Text, inputPO.Text,
+                                                      inputPRO.Text, inputCDP.Text, inputNSS.Text, "D");
+            Limpiar_campos();
+            MostrarPersonas();
         }
     }
 }
