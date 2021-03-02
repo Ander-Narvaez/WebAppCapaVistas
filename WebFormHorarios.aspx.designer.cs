@@ -11,17 +11,35 @@ namespace WebAppCapaPersonas
 {
 
 
-    public partial class WebFormPacientes
+    public partial class WebFormHorarios
     {
 
         /// <summary>
-        /// Control DropDownListNif_Paciente.
+        /// Control inputDia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListNif_Paciente;
+        protected global::System.Web.UI.WebControls.TextBox inputDia;
+
+        /// <summary>
+        /// Control RequiredFieldValidator.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator;
+
+        /// <summary>
+        /// Control DropDownListJornada.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListJornada;
 
         /// <summary>
         /// Control DropDownListNif_Medico.
@@ -78,12 +96,12 @@ namespace WebAppCapaPersonas
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl msg;
 
         /// <summary>
-        /// Control GridViewPacientes.
+        /// Control GridViewHorarios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewPacientes;
+        protected global::System.Web.UI.WebControls.GridView GridViewHorarios;
     }
 }

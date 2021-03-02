@@ -33,7 +33,10 @@ namespace WebAppCapaPersonas
 
             DropDownListNif_Paciente.DataSource = Cargar_Personas();
             DropDownListNif_Paciente.DataTextField = "NIF";
-            //DropDownListNif.DataValueField = "Cedula";
+            DropDownListNif_Paciente.DataBind();
+
+            DropDownListNif_Medico.DataSource = Cargar_Medicos();
+            DropDownListNif_Medico.DataTextField = "NIF_MEDICO";
             DropDownListNif_Medico.DataBind();
         }
 
@@ -46,10 +49,37 @@ namespace WebAppCapaPersonas
             return Dts;
         }
 
+        public DataSet Cargar_Medicos()
+        {
+            DataSet Dts = new DataSet();
+            Dts = Ws.GetListaMedicos("", "", "", "", "", "Q");
+            return Dts;
+        }
+
         protected void BtnAgregar_Click(object sender, EventArgs e)
         {
-            Labelmsg.Text = Ws.MantenimientoEmpleados(DropDownListNif_Paciente.SelectedItem.ToString(), this.DropDownListNif_Medico.SelectedItem.ToString(), "I");
+            Labelmsg.Text = Ws.MantenimientoPacientes(DropDownListNif_Paciente.SelectedItem.ToString(), this.DropDownListNif_Medico.SelectedItem.ToString(), "I");
             MostrarPacientes();
+        }
+
+        protected void BtnActualizar_Click(object sender, EventArgs e)
+        {
+            Labelmsg.Text = Ws.MantenimientoPacientes(DropDownListNif_Paciente.SelectedItem.ToString(), this.DropDownListNif_Medico.SelectedItem.ToString(), "U");
+            MostrarPacientes();
+        }
+
+        protected void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            Labelmsg.Text = Ws.MantenimientoPacientes(DropDownListNif_Paciente.SelectedItem.ToString(), this.DropDownListNif_Medico.SelectedItem.ToString(), "D");
+            MostrarPacientes();
+        }
+
+        protected void GridViewPacientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridViewRow row = GridViewPacientes.SelectedRow;
+
+            this.DropDownListNif_Paciente.SelectedValue = "" + row.Cells[1].Text;
+            this.DropDownListNif_Medico.SelectedValue = "" + row.Cells[6].Text;
         }
     }
 }

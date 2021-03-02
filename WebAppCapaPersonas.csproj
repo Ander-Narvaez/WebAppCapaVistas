@@ -134,6 +134,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="WebFormEmpleados.aspx" />
+    <Content Include="WebFormHorarios.aspx" />
     <Content Include="WebFormMedicos.aspx" />
     <Content Include="WebFormPacientes.aspx" />
     <Content Include="WebFormPersonas.aspx" />
@@ -234,6 +235,13 @@
     </Compile>
     <Compile Include="WebFormEmpleados.aspx.designer.cs">
       <DependentUpon>WebFormEmpleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormHorarios.aspx.cs">
+      <DependentUpon>WebFormHorarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormHorarios.aspx.designer.cs">
+      <DependentUpon>WebFormHorarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormMedicos.aspx.cs">
       <DependentUpon>WebFormMedicos.aspx</DependentUpon>
