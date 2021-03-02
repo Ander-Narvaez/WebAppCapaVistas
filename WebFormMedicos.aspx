@@ -11,7 +11,8 @@
                         <div class="form-row">
                             <div class="form-group col-md-8">
                                  <label for="DropDownListNif">Nif</label>
-                                <asp:DropDownList class="form-control" ID="DropDownListNif" runat="server">
+                                <asp:DropDownList class="form-control" ID="DropDownListNif" runat="server" OnSelectedIndexChanged="DropDownListNif_SelectedIndexChanged">
+                                <asp:ListItem> </asp:ListItem>
                                 </asp:DropDownList>
                             </div>
                         </div>
@@ -34,6 +35,7 @@
                             <div class="form-group col-md-6">
                                 <label for="inputState">Estatus</label>
                                 <asp:DropDownList class="form-control" ID="inputState" runat="server">
+                                    <asp:ListItem> </asp:ListItem>
                                     <asp:ListItem>Medico Interino</asp:ListItem>
                                     <asp:ListItem>MedicoTitular</asp:ListItem>
                                     <asp:ListItem>Medico Sustituto</asp:ListItem>
@@ -43,6 +45,8 @@
                         <div class="form-group col-md-8">
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <asp:Button class="btn btn-success" ID="BtnAgregar" runat="server" Text="Agregar" OnClick="BtnAgregar_Click" />
+                                <asp:Button class="btn btn-info" ID="BtnActulizar" runat="server" Text="Actualizar" OnClick="BtnActualizar_Click" />
+                                <asp:Button class="btn btn-danger" ID="BtnEliminar" runat="server" Text="Eliminar" OnClick="BtnEliminar_Click" />
                             </div>
                         </div>
                         <div class="form-group col-md-6">
@@ -61,7 +65,7 @@
     </div>
     <div class="row">
         <div class="col-12 col-md-12 mx-auto">
-            <asp:GridView runat="server" class="table table-hover" ID="GridViewMedicos">
+            <asp:GridView runat="server" class="table table-hover" ID="GridViewMedicos" OnSelectedIndexChanged="GridViewMedicos_SelectedIndexChanged">
                 <Columns>
                     <asp:CommandField HeaderText="Seleccionar" ShowSelectButton="True" />
                 </Columns>
