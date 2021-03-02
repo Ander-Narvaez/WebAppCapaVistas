@@ -79,8 +79,7 @@ namespace WebAppCapaPersonas
 
         protected void BtnEliminar_Click(object sender, EventArgs e)
         {
-            Labelmsg.Text = Ws.MantenimientoPersona(inputNif.Text, inputNC.Text, inputDR.Text, inputTL.Text, inputPO.Text,
-                                                      inputPRO.Text, inputCDP.Text, inputNSS.Text, "D");
+            Labelmsg.Text = Ws.MantenimientoPersona(inputNif.Text,"","", "","","","","", "D");
             Limpiar_campos();
             MostrarPersonas();
         }

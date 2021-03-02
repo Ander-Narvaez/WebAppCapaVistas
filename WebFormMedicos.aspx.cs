@@ -41,6 +41,7 @@ namespace WebAppCapaPersonas
             DropDownListNif.DataSource = Cargar_Personas();
             DropDownListNif.DataTextField = "NIF";
             DropDownListNif.DataBind();
+
         }
 
         public DataSet Cargar_Personas ()
@@ -53,11 +54,11 @@ namespace WebAppCapaPersonas
 
         public void Limpiar_Campos()
         {
-            this.DropDownListNif.SelectedIndex = 0;
+         //this.DropDownListNif.SelectedIndex = 0;
             this.fecha_alta.Value = "";
             this.fecha_baja.Value = "";
             this.inputNCO.Text = "";
-            this.inputState.SelectedIndex = 0;
+         //this.inputState.SelectedIndex = 0;
         }
 
         protected void BtnAgregar_Click(object sender, EventArgs e)
