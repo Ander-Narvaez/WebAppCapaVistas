@@ -33,7 +33,6 @@ namespace WebAppCapaPersonas
 
             DropDownListNif.DataSource = Cargar_Personas();
             DropDownListNif.DataTextField = "NIF";
-            //DropDownListNif.DataValueField = "Cedula";
             DropDownListNif.DataBind();
         }
 
@@ -46,10 +45,39 @@ namespace WebAppCapaPersonas
             return Dts;
         }
 
+        public void Limpiar_Campos()
+        {
+            this.DropDownListNif.SelectedIndex = 0;
+            this.DropDownListPuesto_Empleado.SelectedIndex = 0;
+        }
+
         protected void BtnAgregar_Click(object sender, EventArgs e)
         {
             Labelmsg.Text = Ws.MantenimientoEmpleados(DropDownListNif.SelectedItem.ToString(),this.DropDownListPuesto_Empleado.SelectedItem.ToString(), "I");
+            Limpiar_Campos();
             MostrarEmpleados();
         }
+
+        protected void BtnActualizar_Click(object sender, EventArgs e)
+        {
+            Labelmsg.Text = Ws.MantenimientoEmpleados(DropDownListNif.SelectedItem.ToString(), this.DropDownListPuesto_Empleado.SelectedItem.ToString(), "U");
+            Limpiar_Campos();
+            MostrarEmpleados();
+        }
+
+        protected void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            Labelmsg.Text = Ws.MantenimientoEmpleados(DropDownListNif.SelectedItem.ToString(), this.DropDownListPuesto_Empleado.SelectedItem.ToString(), "D");
+            Limpiar_Campos();
+            MostrarEmpleados();
+        }
+      
+        protected void GridViewEmpleados_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridViewRow row = GridViewEmpleados.SelectedRow;
+
+            this.DropDownListNif.SelectedValue = "" + row.Cells[1].Text;
+            this.DropDownListPuesto_Empleado.SelectedItem.Value = "" + row.Cells[6].Text;
+        }
     }
-}
+} 
