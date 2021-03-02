@@ -133,7 +133,9 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="WebFormEmpleados.aspx" />
     <Content Include="WebFormMedicos.aspx" />
+    <Content Include="WebFormPacientes.aspx" />
     <Content Include="WebFormPersonas.aspx" />
     <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Connected Services\ServiceReference\WebService.wsdl" />
@@ -226,12 +228,26 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="WebFormEmpleados.aspx.cs">
+      <DependentUpon>WebFormEmpleados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormEmpleados.aspx.designer.cs">
+      <DependentUpon>WebFormEmpleados.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebFormMedicos.aspx.cs">
       <DependentUpon>WebFormMedicos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebFormMedicos.aspx.designer.cs">
       <DependentUpon>WebFormMedicos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormPacientes.aspx.cs">
+      <DependentUpon>WebFormPacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormPacientes.aspx.designer.cs">
+      <DependentUpon>WebFormPacientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormPersonas.aspx.cs">
       <DependentUpon>WebFormPersonas.aspx</DependentUpon>
