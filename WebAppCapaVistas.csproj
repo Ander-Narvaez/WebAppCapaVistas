@@ -108,6 +108,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="images\img1.jpeg" />
+    <Content Include="images\img2.jpeg" />
+    <Content Include="images\img3.jpeg" />
     <Content Include="WebFormVacaciones.aspx" />
     <None Include="Connected Services\ServiceReference\WebService.disco" />
     <None Include="Connected Services\ServiceReference\configuration91.svcinfo" />
