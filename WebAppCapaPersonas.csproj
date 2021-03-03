@@ -108,6 +108,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="images\imss-clinicas.jpg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="WebFormVacaciones.aspx" />
     <None Include="Connected Services\ServiceReference\WebService.disco" />
     <None Include="Connected Services\ServiceReference\configuration91.svcinfo" />
@@ -142,8 +145,6 @@
     <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Connected Services\ServiceReference\WebService.wsdl" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
