@@ -11,12 +11,14 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="DropDownListNif_Paciente" class"form-label">Nif Paciente</label>
-                                <asp:DropDownList class="form-select" ID="DropDownListNif_Paciente" runat="server">
+                                <asp:DropDownList class="form-select" ID="DropDownListNif_Paciente" runat="server" AppendDataBoundItems="True">
+                                 <asp:ListItem Value=""> </asp:ListItem>
                                 </asp:DropDownList>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="DropDownListNif_Medico" class="form-label">Nif Medico</label>
-                                <asp:DropDownList class="form-select" ID="DropDownListNif_Medico" runat="server">
+                                <asp:DropDownList class="form-select" ID="DropDownListNif_Medico" runat="server" AppendDataBoundItems="True">
+                                 <asp:ListItem Value=""> </asp:ListItem>
                                 </asp:DropDownList>
                             </div>
                         </div>
@@ -27,12 +29,6 @@
                         </div>
                         <div class="form-group col-md-6">
                             <asp:Label ID="Labelmsg" runat="server"></asp:Label>
-                            <div id="msg" runat="server" class="alert alert-warning alert-dismissible fade show" role="alert">
-                                <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                            </div>
                         </div>
                     </div>
                 </div>

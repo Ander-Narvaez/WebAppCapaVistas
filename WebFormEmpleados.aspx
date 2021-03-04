@@ -20,11 +20,11 @@
                                     <label for="DropDownListPuesto_Empleado" class="form-label" align="center">Puesto Empleado</label>
                                     <asp:DropDownList class="form-select" ID="DropDownListPuesto_Empleado" runat="server">
                                         <asp:ListItem> </asp:ListItem>
-                                        <asp:ListItem>Ats</asp:ListItem>
-                                        <asp:ListItem>Ats de Zona</asp:ListItem>
-                                        <asp:ListItem>Auxiliares de Enfermería</asp:ListItem>
-                                        <asp:ListItem>Celadores</asp:ListItem>
-                                        <asp:ListItem>Administrativos</asp:ListItem>
+                                        <asp:ListItem>ATS</asp:ListItem>
+                                        <asp:ListItem>ATS DE ZONA</asp:ListItem>
+                                        <asp:ListItem>AUXILIARES DE ENFERMERIA</asp:ListItem>
+                                        <asp:ListItem>CELADORES</asp:ListItem>
+                                        <asp:ListItem>ADMINISTRATIVOS</asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
                             </div>
@@ -36,12 +36,6 @@
                             
                             <div class="form-group col-md-6">
                                 <asp:Label ID="Labelmsg" runat="server"></asp:Label>
-                                <div id="msg" runat="server" class="alert alert-warning alert-dismissible fade show" role="alert">
-                                    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
                             </div>
                         </div>
                     </div>

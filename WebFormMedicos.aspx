@@ -9,11 +9,14 @@
                     <div class="panel-heading">Registro Medicos</div>
                     <div class="panel-body">
                         <div class="row">
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-6">
                                  <label for="DropDownListNif" class"form-label">Nif</label>
-                                <asp:DropDownList class="form-control" ID="DropDownListNif" runat="server">
-                                <asp:ListItem> </asp:ListItem>
+                                <asp:DropDownList class="form-select" ID="DropDownListNif" runat="server" OnSelectedIndexChanged="DropDownListNif_SelectedIndexChanged" AutoPostBack="True" AppendDataBoundItems="True">
                                 </asp:DropDownList>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="NC" class"form-label"></label>
+                                <asp:TextBox class="form-control disabled text-success" ID="NC"  runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="row">
@@ -35,10 +38,10 @@
                             <div class="form-group col-md-6">
                                 <label for="inputState" class"form-label">Estatus</label>
                                 <asp:DropDownList class="form-select" ID="inputState" runat="server">
-                                    <asp:ListItem> </asp:ListItem>
-                                    <asp:ListItem>Medico Interino</asp:ListItem>
-                                    <asp:ListItem>MedicoTitular</asp:ListItem>
-                                    <asp:ListItem>Medico Sustituto</asp:ListItem>
+                                    <asp:ListItem>SELECCIONE UNO</asp:ListItem>
+                                    <asp:ListItem>MEDICO INTERINO</asp:ListItem>
+                                    <asp:ListItem>MEDICO TITULAR</asp:ListItem>
+                                    <asp:ListItem>MEDICO SUSTITUTO</asp:ListItem>
                                 </asp:DropDownList>
                             </div>
                         </div>
@@ -49,12 +52,6 @@
                         </div>
                         <div class="form-group col-md-6">
                             <asp:Label ID="Labelmsg" runat="server"></asp:Label>
-                            <div id="msg" runat="server" class="alert alert-warning alert-dismissible fade show" role="alert">
-                                <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                            </div>
                         </div>
                     </div>
                 </div>
