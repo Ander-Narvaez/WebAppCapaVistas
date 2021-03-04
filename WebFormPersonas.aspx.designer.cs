@@ -186,22 +186,13 @@ namespace WebAppCapaPersonas
         protected global::System.Web.UI.WebControls.Button BtnEliminar;
 
         /// <summary>
-        /// Control Labelmsg.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Labelmsg;
-
-        /// <summary>
         /// Control msg.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl msg;
+        protected global::System.Web.UI.WebControls.Label msg;
 
         /// <summary>
         /// Control GridViewPersonas.

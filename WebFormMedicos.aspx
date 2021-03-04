@@ -3,38 +3,38 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-md-15 col-sm-15">
                 <div class="panel panel-primary">
                     <div class="panel-heading">Registro Medicos</div>
                     <div class="panel-body">
-                        <div class="form-row">
+                        <div class="row">
                             <div class="form-group col-md-8">
-                                 <label for="DropDownListNif">Nif</label>
+                                 <label for="DropDownListNif" class"form-label">Nif</label>
                                 <asp:DropDownList class="form-control" ID="DropDownListNif" runat="server">
                                 <asp:ListItem> </asp:ListItem>
                                 </asp:DropDownList>
                             </div>
                         </div>
-                        <div class="form-row">
+                        <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="fecha_alta">Fecha Alta</label>
+                                <label class"form-label" for="fecha_alta" >Fecha Alta</label>
                                 <input type="date" class="form-control" id="fecha_alta" runat="server" />
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="fecha_baja">Fecha Baja</label>
+                                <label for="fecha_baja" class"form-label">Fecha Baja</label>
                                 <input type="date" class="form-control" id="fecha_baja" runat="server" />
                             </div>
                         </div>
-                        <div class="form-row">
+                        <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="inputNCO">Numero Colegiado</label>
+                                <label for="inputNCO" class"form-label">Numero Colegiado</label>
                                 <asp:TextBox type="text" class="form-control" ID="inputNCO" placeholder="Numero Colegiado" runat="server"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="inputNCO" ForeColor="Red">Debe Ilenar el campo</asp:RequiredFieldValidator>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inputState">Estatus</label>
-                                <asp:DropDownList class="form-control" ID="inputState" runat="server">
+                                <label for="inputState" class"form-label">Estatus</label>
+                                <asp:DropDownList class="form-select" ID="inputState" runat="server">
                                     <asp:ListItem> </asp:ListItem>
                                     <asp:ListItem>Medico Interino</asp:ListItem>
                                     <asp:ListItem>MedicoTitular</asp:ListItem>
@@ -43,11 +43,9 @@
                             </div>
                         </div>
                         <div class="form-group col-md-8">
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <asp:Button class="btn btn-success" ID="BtnAgregar" runat="server" Text="Agregar" OnClick="BtnAgregar_Click" />
-                                <asp:Button class="btn btn-info" ID="BtnActulizar" runat="server" Text="Actualizar" OnClick="BtnActualizar_Click" />
-                                <asp:Button class="btn btn-danger" ID="BtnEliminar" runat="server" Text="Eliminar" OnClick="BtnEliminar_Click" />
-                            </div>
+                                <asp:Button class="btn btn-outline-success" ID="BtnAgregar" runat="server" Text="Agregar" OnClick="BtnAgregar_Click" />
+                                <asp:Button class="btn btn-outline-info" ID="BtnActulizar" runat="server" Text="Actualizar" OnClick="BtnActualizar_Click" />
+                                <asp:Button class="btn btn-outline-danger" ID="BtnEliminar" runat="server" Text="Eliminar" OnClick="BtnEliminar_Click" />
                         </div>
                         <div class="form-group col-md-6">
                             <asp:Label ID="Labelmsg" runat="server"></asp:Label>

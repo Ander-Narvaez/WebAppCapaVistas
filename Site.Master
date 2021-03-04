@@ -19,58 +19,6 @@
 </head>
 <body>
     <form runat="server">
-
-        <div class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">CLINICA . FUTURE</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="~/">Inico</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mantenimiento
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li class="nav-item">
-                                    <a class="dropdown-item text-dark" runat="server" href="WebFormPersonas.aspx">Personas</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="dropdown-item text-dark" runat="server" href="WebFormMedicos.aspx">Medicos</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="dropdown-item text-dark" runat="server" href="WebFormEmpleados.aspx">Empleados</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="dropdown-item text-dark" runat="server" href="WebFormPacientes.aspx">Pacientes</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="dropdown-item text-dark" runat="server" href="WebFormHorarios.aspx">Horarios</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="dropdown-item text-dark" runat="server" href="WebFormVacaciones.aspx">Vacaciones</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-            <hr />
-            <footer class="border-top footer text-muted">
-                <div class="container">
-                    <p>&copy; <%: DateTime.Now.Year %> - CLINICA S.A  Todos los Derechos Reservados</p>
-                </div>
-            </footer>
-        </div>
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -90,6 +38,58 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
+            <div class="container-fluid">
+                <strong>
+                     <a class="navbar-brand  text-primary"  runat="server" href="~/">CLINICA . FUTURA</a>
+                </strong>       
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-primary" runat="server" href="~/" >Inicio</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-primary" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Registros
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li class="nav-item">
+                                    <a class="dropdown-item  text-primary" runat="server" href="WebFormPersonas.aspx">Personas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-item  text-primary" runat="server" href="WebFormMedicos.aspx">Medicos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-item  text-primary" runat="server" href="WebFormEmpleados.aspx">Empleados</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-item  text-primary" runat="server" href="WebFormPacientes.aspx">Pacientes</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link me-auto mb-2 mb-lg-0  text-primary" runat="server" href="WebFormHorarios.aspx">Horarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link me-auto mb-2 mb-lg-0  text-primary" runat="server" href="WebFormVacaciones.aspx">Vacaciones</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <div class="container">
+                    <p>&copy; <%: DateTime.Now.Year %> - CLINICA S.A  Todos los Derechos Reservados</p>
+                </div>
+            </footer>
+        </div>
     </form>
 </body>
 </html>

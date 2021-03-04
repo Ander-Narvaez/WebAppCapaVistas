@@ -48,8 +48,10 @@ namespace WebAppCapaPersonas
 
         protected void BtnAgregar_Click(object sender, EventArgs e)
         {
-            Labelmsg.Text = Ws.MantenimientoPersona(inputNif.Text, inputNC.Text, inputDR.Text, inputTL.Text, inputPO.Text,
-                                                      inputPRO.Text, inputCDP.Text, inputNSS.Text, "I");
+
+           msg.Text = Ws.MantenimientoPersona(inputNif.Text, inputNC.Text, inputDR.Text, inputTL.Text, inputPO.Text,
+                                                       inputPRO.Text, inputCDP.Text, inputNSS.Text, "I");
+            
             Limpiar_campos();
             MostrarPersonas();
         }
@@ -71,7 +73,7 @@ namespace WebAppCapaPersonas
 
         protected void BtnActualizar_Click(object sender, EventArgs e)
         {
-            Labelmsg.Text = Ws.MantenimientoPersona(inputNif.Text, inputNC.Text, inputDR.Text, inputTL.Text, inputPO.Text,
+            msg.Text = Ws.MantenimientoPersona(inputNif.Text, inputNC.Text, inputDR.Text, inputTL.Text, inputPO.Text,
                                                       inputPRO.Text, inputCDP.Text, inputNSS.Text, "U");
             Limpiar_campos();
             MostrarPersonas();
@@ -79,7 +81,7 @@ namespace WebAppCapaPersonas
 
         protected void BtnEliminar_Click(object sender, EventArgs e)
         {
-            Labelmsg.Text = Ws.MantenimientoPersona(inputNif.Text,"","", "","","","","", "D");
+            msg.Text = Ws.MantenimientoPersona(inputNif.Text,"","","","","","","","D");
             Limpiar_campos();
             MostrarPersonas();
         }
