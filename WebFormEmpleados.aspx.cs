@@ -40,7 +40,7 @@ namespace WebAppCapaPersonas
         public DataSet Cargar_Personas()
         {
             DataSet Dts = new DataSet();
-            Dts = Ws.GetListaPersonas("", "", "", "", "", "", "", "", "Q");
+            Dts = Ws.GetListaPersonas("", "", "", "", "", "", "", "", "S");
 
             return Dts;
         }
@@ -76,6 +76,8 @@ namespace WebAppCapaPersonas
         {
             GridViewRow row = GridViewEmpleados.SelectedRow;
 
+            //DropDownListNif.Items.Add(new ListItem("" + row.Cells[1].Text));
+            //DropDownListNif.SelectedIndex = (DropDownListNif.Items.Count) - 1;
             this.DropDownListNif.SelectedValue = "" + row.Cells[1].Text;
             this.DropDownListPuesto_Empleado.SelectedItem.Value = "" + row.Cells[6].Text;
         }

@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - Clinica S.A </title>
+    <title><%: Page.Title %> - CLINICA . FUTURA </title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -86,7 +86,7 @@
             <hr />
             <footer>
                 <div class="container">
-                    <p>&copy; <%: DateTime.Now.Year %> - CLINICA S.A  Todos los Derechos Reservados</p>
+                    <p>&copy; <%: DateTime.Now.Year %> - CLINICA . FUTURA  Todos los Derechos Reservados</p>
                 </div>
             </footer>
         </div>

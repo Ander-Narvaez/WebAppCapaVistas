@@ -52,7 +52,7 @@ namespace WebAppCapaPersonas
         public DataSet Cargar_Medicos()
         {
             DataSet Dts = new DataSet();
-            Dts = Ws.GetListaMedicos("", "", "", "", "", "Q");
+            Dts = Ws.GetListaMedicos("", "", "", "", "", "S");
             return Dts;
         }
 
@@ -78,7 +78,8 @@ namespace WebAppCapaPersonas
         {
             GridViewRow row = GridViewPacientes.SelectedRow;
 
-            this.DropDownListNif_Paciente.SelectedValue = "" + row.Cells[1].Text;
+            DropDownListNif_Paciente.Items.Add(new ListItem("" + row.Cells[1].Text));
+            DropDownListNif_Paciente.SelectedIndex = (DropDownListNif_Paciente.Items.Count) - 1;
             this.DropDownListNif_Medico.SelectedValue = "" + row.Cells[6].Text;
         }
     }

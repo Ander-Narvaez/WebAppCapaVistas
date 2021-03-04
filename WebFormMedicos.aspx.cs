@@ -23,6 +23,7 @@ namespace WebAppCapaPersonas
             else
             {
                 MostrarMedicos();
+                vResfrescarObjeto = "nueva";
             }
         }
 
@@ -37,35 +38,40 @@ namespace WebAppCapaPersonas
             Dts = Ws.GetListaMedicos("","","","" ,"", "S");
             GridViewMedicos.DataSource = Dts;
             GridViewMedicos.DataBind();
+            Cargar_Nif();
+           
 
-            DropDownListNif.DataSource = Cargar_Personas();
+        }
+
+        public void Cargar_Nif ()
+        {
+            DataSet Dts = new DataSet();
+            Dts = Ws.GetListaPersonas("","","","","","","","", "Q");
+
+            DropDownListNif.Items.Clear() ;
+            DropDownListNif.DataSource = Dts;
+            DropDownListNif.Items.Add(new ListItem(""));
             DropDownListNif.DataTextField = "NIF";
+            DropDownListNif.DataValueField = "NOMBRE_COMPLETO";
             DropDownListNif.DataBind();
 
         }
 
-        public DataSet Cargar_Personas ()
-        {
-            DataSet Dts = new DataSet();
-            Dts = Ws.GetListaPersonas("","","","","","","","", "Q");
-            
-            return Dts;
-        }
-
         public void Limpiar_Campos()
         {
-         //this.DropDownListNif.SelectedIndex = 0;
+            //this.DropDownListNif.SelectedIndex = 0;
             this.fecha_alta.Value = "";
             this.fecha_baja.Value = "";
             this.inputNCO.Text = "";
-         //this.inputState.SelectedIndex = 0;
+            //this.NC.Text = "";
+            //this.inputState.SelectedIndex = 0;
         }
 
         protected void BtnAgregar_Click(object sender, EventArgs e)
         {
             Labelmsg.Text = Ws.MantenimientoMedico(DropDownListNif.SelectedItem.ToString(), fecha_alta.Value, fecha_baja.Value, inputNCO.Text, inputState.SelectedItem.ToString(), "I");
               Limpiar_Campos();
-            MostrarMedicos();
+              MostrarMedicos();
         }
 
         protected void BtnActualizar_Click(object sender, EventArgs e)
@@ -91,8 +97,23 @@ namespace WebAppCapaPersonas
             this.fecha_alta.Value = Convert.ToDateTime(row.Cells[5].Text).ToString("yyyy-MM-dd");
             this.fecha_baja.Value = Convert.ToDateTime(row.Cells[6].Text).ToString("yyyy-MM-dd");
             this.inputNCO.Text = "" + row.Cells[7].Text;
-            this.inputState.SelectedItem.Value = "" + row.Cells[8].Text;
-            
+            if(row.Cells[8].Text == "MEDICO INTERINO")
+            {
+                this.inputState.SelectedIndex = 1;
+            }
+            else if(row.Cells[8].Text == "MEDICO TITULAR")
+            {
+                this.inputState.SelectedIndex = 2;
+            }
+            else
+            {
+                this.inputState.SelectedIndex = 3;
+            }
+        }
+
+        protected void DropDownListNif_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            NC.Text = DropDownListNif.SelectedValue.ToString();
         }
     }
 }
