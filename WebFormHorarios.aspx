@@ -7,7 +7,7 @@
         <div class="row justify-content-center">
             <div class="col-md-15 col-sm-15">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">Registro Medicos</div>
+                    <div class="panel-heading">Registro Horarios</div>
                     <div class="panel-body">
                         <div class="row">
                             <div class="form-group col-md-6">
