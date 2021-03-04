@@ -7,7 +7,7 @@
             <div class="col-md-10 col-sm-10">
                 <div class="panel panel-primary">
                     <div class="panel-heading">Registro Empleados</div>
-                    <div class="panel-body">
+                    <div class="panel-bo dy">
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="DropDownListNif">Nif</label>
