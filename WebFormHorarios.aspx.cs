@@ -39,7 +39,7 @@ namespace WebAppCapaPersonas
         public DataSet Cargar_Medicos()
         {
             DataSet Dts = new DataSet();
-            Dts = Ws.GetListaMedicos("", "", "", "", "", "Q");
+            Dts = Ws.GetListaMedicos("", "", "", "", "", "S");
             return Dts;
         }
 
