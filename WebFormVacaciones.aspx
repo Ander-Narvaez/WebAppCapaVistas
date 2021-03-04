@@ -2,15 +2,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
      <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-md-15 col-sm-15">
                 <div class="panel panel-primary">
                     <div class="panel-heading">Registro Medicos</div>
                     <div class="panel-body">
-                        <div class="form-row">
+                        <div class="row">
                             <div class="form-group col-md-8">
-                                 <label for="DropDownListNif_Empleados">Nif Empleados</label>
-                                <asp:DropDownList class="form-control" ID="DropDownListNif_Empleados" runat="server">
+                                 <label for="DropDownListNif_Empleados" class="form-label">Nif Empleados</label>
+                                <asp:DropDownList class="form-select" ID="DropDownListNif_Empleados" runat="server">
                                 <asp:ListItem> </asp:ListItem>
                                 </asp:DropDownList>
                             </div>
